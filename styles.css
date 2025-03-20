@@ -173,6 +173,12 @@ textarea:not([rows]) {
   text-decoration: none;
 }
 
+.tp-9 {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-3);
+  font-style: italic;
+}
+
 /* Body */
 body {
   padding: 10vw;
@@ -199,7 +205,7 @@ body::before {
 main {
   display: flex;
   width: 100%;
-  min-height: calc(100vh - 20vw);
+  height: calc(100vh - 20vw);
   align-items: center;
   gap: 2rem;
 }
@@ -236,10 +242,12 @@ form {
 }
 
 form input {
-  padding: 1rem 2rem;
+  padding: 1rem 3rem 1rem 2rem;
   min-width: 5rem;
   border-radius: 0.313rem;
-  border: 1px solid var(--grey);
+  border: 2px solid var(--grey);
+  flex-grow: 1;
+  outline: none;
 }
 
 form button {
@@ -247,6 +255,41 @@ form button {
   padding: 1rem 2rem;
   border-radius: 0.313rem;
   cursor: pointer;
+}
+
+.terms {
+  align-self: center;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.error-msg {
+  position: absolute;
+  right: 0;
+  bottom: -1.1rem;
+  display: none;
+}
+
+.error-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  display: none;
+}
+
+/* Error States */
+.error-border {
+  border: 2px solid var(--pink);
+}
+
+.error-visibility {
+  display: block;
 }
 
 /* Media Query */
@@ -281,6 +324,5 @@ form button {
 
   form {
     padding: 1.5rem;
-    gap: 1rem;
   }
 }
